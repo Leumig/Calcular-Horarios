@@ -1,12 +1,13 @@
 body {
-    background-color: rgb(214, 159, 202);
-    color: rgb(66, 9, 54);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(214, 159, 202);
+  color: rgb(66, 9, 54);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 h1 {
     text-align: center;
     margin: 0 100px 5px 100px;
     font-size: 38px;
+    user-select: none;
 }
 .contenedor-flex {
   display: flex;
@@ -15,68 +16,122 @@ h1 {
   align-items: center;
 }
 button {
-    color: rgb(66, 9, 54);
-    background-color: rgb(214, 159, 202);
-    border: solid 4px rgb(66, 9, 54);
-    border-radius: 10px;
-    padding: 15px;
-    font-size: 35px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    font-weight: bold;
+  color: rgb(66, 9, 54);
+  background-color: rgb(214, 159, 202);
+  border: solid 4px rgb(66, 9, 54);
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 35px;
+  font-weight: bold;
+  transition-duration: 300ms;
+  user-select: none;
+  position: absolute;
 }
 [type="button"]:hover {
-    cursor: pointer;
-    background-color: rgb(66, 9, 54);
-    color: rgb(214, 159, 202);
-    transition-duration: 300ms;
+  cursor: pointer;
+  background-color: rgb(66, 9, 54);
+  color: rgb(214, 159, 202);
+  transform: scale(1.08);
 }
 
 label {
-    font-weight: bold;
-    display: block;
-    font-size: 25px;
+  font-weight: bold;
+  display: block;
+  font-size: 25px;
 }
 input {
-    margin-bottom: 7px;
-    font-size: 35px;
-    font-weight: bold;
-    color: rgb(66, 9, 54);
-    background-color: rgb(214, 159, 202);
-    border: solid 4px rgb(66, 9, 54);
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 20px;
+  margin-bottom: 7px;
+  font-size: 35px;
+  font-weight: bold;
+  color: rgb(66, 9, 54);
+  background-color: rgb(214, 159, 202);
+  border: solid 4px rgb(66, 9, 54);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  transition-duration: 300ms;
 }
 input:hover {
+    cursor: pointer;
+    transform: scale(1.08);
+}
+
+p {
+  font-size: 15px;
+  color: rgb(66, 9, 54);
+  background-color: rgb(214, 159, 202);
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 0px;
+}
+#texto {
+  color: rgb(214, 159, 202);
+  border: solid 2px rgb(66, 9, 54);
+  background-color: rgb(66, 9, 54);
+  border-radius: 12px;
+  width: 45%;
+  margin-left: 30%;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  margin: auto;
+}
+
+.contenedor-linea {
+  display: flex;
+  width: 45%;
+  margin: 3.6% 0 3.8% 0;
+  justify-content: center;
+  align-items: center;
+}
+
+i.fa {
+  margin-bottom: 4px;
+  max-height: 30px;
+  font-size: 2em;
+  cursor: pointer;
+  border: solid 4px rgb(66, 9, 54);
+  border-radius: 12px;
+  padding: 10px;
+  transition-duration: 300ms;
+  margin-right: 5px;
+  position: absolute;
+  right: 26.5%;
+}
+i.fa:hover {
     cursor: pointer;
     background-color: rgb(66, 9, 54);
     color: rgb(214, 159, 202);
     transition-duration: 300ms;
-}
-input[type="date"]:hover::-webkit-calendar-picker-indicator {
-    color: rgb(214, 159, 202);
+    transform: scale(1.08);
+ } 
+
+.mensaje {
+  user-select: none;
+  color: rgb(66, 9, 54);
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 13px;
+  position: absolute;
+  right: 24%;
 }
 
-
-p {
-    font-size: 15px;
-    color: rgb(66, 9, 54);
-    background-color: rgb(214, 159, 202);
-    border-radius: 4px;
-    padding: 10px;
-    margin-top: 20px;
-    margin-left: 0px;
+@keyframes fadeOu {
+  to {
+    opacity: 0;
+  }
 }
-#texto {
-    color: rgb(214, 159, 202);
-    border: solid 2px rgb(66, 9, 54);
-    background-color: rgb(66, 9, 54);
-    border-radius: 12px;
-    width: 45%;
-    margin-left: 30%;
-    padding: 10px;
-    font-size: 18px;
-    text-align: center;
-    margin: auto;
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.fade-ou {
+  opacity: 1;
+  animation: fadeOu 0.15s ease-in 1 forwards;
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.15s ease-in 1 forwards;
 }

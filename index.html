@@ -6,6 +6,7 @@
     <title>Calcular Horarios</title>
     <link rel="shortcut icon" href="./img/reloj.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/estilos.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <script type="module" src="./js/logica.js" defer></script>
   </head>
   <body>
@@ -14,9 +15,13 @@
       </header>
       <main class="contenedor-flex">
         <input type="time" id="hora" name="hora">
-        <button class="botonStandard" type="button" id="calcular">Calcular</button>
+        <div class="contenedor-linea">
+          <button class="botonStandard" type="button" id="calcular">Calcular</button>
+          <i class="fa fa-copy" id="botonCopiar"></i>
+          <span class="mensaje" id="mensaje"></span>
+        </div>
       </main>
       <div id="texto" class="contenedor-flex"></div>
-      <!-- <button id="copiarTexto">Copiar Texto</button> -->
+      <br>
   </body>
 </html>
