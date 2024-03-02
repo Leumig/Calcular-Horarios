@@ -55,6 +55,8 @@ botonCopiar.addEventListener("click", function () {
         textoGenerado.innerHTML = "&#x2764 Pero qué estás copiandoooo &#x2764";
         textoCalculado == false
     } else {
+        // Esto copia lo que aparezca en el párrafo generado de forma directa
+        /*
         const seleccion = window.getSelection();
         const rango = document.createRange();
         rango.selectNodeContents(textoGenerado);
@@ -62,7 +64,27 @@ botonCopiar.addEventListener("click", function () {
         seleccion.addRange(rango);
         document.execCommand("copy");
         seleccion.removeAllRanges();
-    
+        */
+
+        // Esto lo hago para que al copiar se respete el formato de mejor manera
+        const horaRecibida = document.getElementById("hora").value;
+        const [hora, minutos] = horaRecibida.split(":");
+
+        navigator.clipboard.writeText(`
+Argentina: ${calcularHoraSegunPais(hora, minutos, 2)}
+Bolivia: ${calcularHoraSegunPais(hora, minutos, 1)}
+Brasil: ${calcularHoraSegunPais(hora, minutos, 2)}
+Chile: ${calcularHoraSegunPais(hora, minutos, 2)}
+Colombia: ${horaRecibida} hrs.
+Ecuador: ${horaRecibida} hrs.
+Estados Unidos: ${horaRecibida} hrs.
+España: ${calcularHoraSegunPais(hora, minutos, 6)}
+Inglaterra: ${calcularHoraSegunPais(hora, minutos, 5)}
+México: ${calcularHoraSegunPais(hora, minutos, -1)}
+Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)}
+Perú: ${horaRecibida} hrs.
+Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)}`);
+
         mensaje.innerHTML = "\u2714";
         mensaje.classList.add("fade-in");
         setTimeout(function () {
