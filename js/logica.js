@@ -33,7 +33,7 @@ boton.addEventListener("click", () => {
             Chile: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
             Colombia: ${horaRecibida} hrs.<br>
             Ecuador: ${horaRecibida} hrs.<br>
-            Estados Unidos: ${horaRecibida} hrs.<br>
+            Estados Unidos: ${calcularHoraSegunPais(hora, minutos, 1)}<br>
             España: ${calcularHoraSegunPais(hora, minutos, 6)}<br>
             Inglaterra: ${calcularHoraSegunPais(hora, minutos, 5)}<br>
             México: ${calcularHoraSegunPais(hora, minutos, -1)}<br>
@@ -77,7 +77,7 @@ Brasil: ${calcularHoraSegunPais(hora, minutos, 2)}
 Chile: ${calcularHoraSegunPais(hora, minutos, 2)}
 Colombia: ${horaRecibida} hrs.
 Ecuador: ${horaRecibida} hrs.
-Estados Unidos: ${horaRecibida} hrs.
+Estados Unidos: ${calcularHoraSegunPais(hora, minutos, 1)}<br>
 España: ${calcularHoraSegunPais(hora, minutos, 6)}
 Inglaterra: ${calcularHoraSegunPais(hora, minutos, 5)}
 México: ${calcularHoraSegunPais(hora, minutos, -1)}
