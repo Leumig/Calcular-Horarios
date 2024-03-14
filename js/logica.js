@@ -25,7 +25,7 @@ function calcularHoraSegunPais(hora, minutos, diferenciaHoraria) {
 
     let horaFormato12h = fecha.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 
-    return `${horaFormato12h} en (Canal)`;
+    return `${horaFormato12h}`;
 }
 
 boton.addEventListener("click", () => {
@@ -38,20 +38,35 @@ boton.addEventListener("click", () => {
         textoCalculado = false;
     } else {
         texto.innerHTML = `
-            Argentina: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
-            Bolivia: ${calcularHoraSegunPais(hora, minutos, 1)}<br>
-            Brasil: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
-            Chile: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
-            Colombia: ${calcularHoraSegunPais(hora, minutos, 0)}<br>
-            Ecuador: ${calcularHoraSegunPais(hora, minutos, 0)}<br>
-            Estados Unidos (ET): ${calcularHoraSegunPais(hora, minutos, 1)}<br>
-            España: ${calcularHoraSegunPais(hora, minutos, 6)}<br>
-            Inglaterra: ${calcularHoraSegunPais(hora, minutos, 5)}<br>
-            México: ${calcularHoraSegunPais(hora, minutos, -1)}<br>
-            Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
-            Perú: ${calcularHoraSegunPais(hora, minutos, 0)}<br>
-            Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)}<br>`;
-
+            Argentina: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
+            Bolivia: ${calcularHoraSegunPais(hora, minutos, 1)} en (Canal)<br>
+            Brasil: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
+            Chile: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
+            Colombia: ${calcularHoraSegunPais(hora, minutos, 0)} en (Canal)<br>
+            Ecuador: ${calcularHoraSegunPais(hora, minutos, 0)} en (Canal)<br>
+            Estados Unidos (ET): ${calcularHoraSegunPais(hora, minutos, 1)} en (Canal)<br>
+            España: ${calcularHoraSegunPais(hora, minutos, 6)} en (Canal)<br>
+            Inglaterra: ${calcularHoraSegunPais(hora, minutos, 5)} en (Canal)<br>
+            México: ${calcularHoraSegunPais(hora, minutos, -1)} en (Canal)<br>
+            Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
+            Perú: ${calcularHoraSegunPais(hora, minutos, 0)} en (Canal)<br>
+            Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
+            <br>
+            <br>
+            <br>
+            Argentina: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
+            Bolivia: ${calcularHoraSegunPais(hora, minutos, 1)} on (Channel)<br>
+            Brazil: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
+            Chile: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
+            Colombia: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
+            Ecuador: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
+            USA (ET): ${calcularHoraSegunPais(hora, minutos, 1)} on (Channel)<br>
+            Spain: ${calcularHoraSegunPais(hora, minutos, 6)} on (Channel)<br>
+            England: ${calcularHoraSegunPais(hora, minutos, 5)} on (Channel)<br>
+            Mexico: ${calcularHoraSegunPais(hora, minutos, -1)} on (Channel)<br>
+            Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
+            Peru: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
+            Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>`;
         textoCalculado = true;
      }
 });
@@ -82,19 +97,35 @@ botonCopiar.addEventListener("click", function () {
         const [hora, minutos] = horaRecibida.split(":");
 
         navigator.clipboard.writeText(`
-Argentina: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
-Bolivia: ${calcularHoraSegunPais(hora, minutos, 1)}<br>
-Brasil: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
-Chile: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
-Colombia: ${calcularHoraSegunPais(hora, minutos, 0)}<br>
-Ecuador: ${calcularHoraSegunPais(hora, minutos, 0)}<br>
-Estados Unidos (ET): ${calcularHoraSegunPais(hora, minutos, 1)}<br>
-España: ${calcularHoraSegunPais(hora, minutos, 6)}<br>
-Inglaterra: ${calcularHoraSegunPais(hora, minutos, 5)}<br>
-México: ${calcularHoraSegunPais(hora, minutos, -1)}<br>
-Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
-Perú: ${calcularHoraSegunPais(hora, minutos, 0)}<br>
-Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)}<br>`);
+Argentina: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
+Bolivia: ${calcularHoraSegunPais(hora, minutos, 1)} en (Canal)<br>
+Brasil: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
+Chile: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
+Colombia: ${calcularHoraSegunPais(hora, minutos, 0)} en (Canal)<br>
+Ecuador: ${calcularHoraSegunPais(hora, minutos, 0)} en (Canal)<br>
+Estados Unidos (ET): ${calcularHoraSegunPais(hora, minutos, 1)} en (Canal)<br>
+España: ${calcularHoraSegunPais(hora, minutos, 6)} en (Canal)<br>
+Inglaterra: ${calcularHoraSegunPais(hora, minutos, 5)} en (Canal)<br>
+México: ${calcularHoraSegunPais(hora, minutos, -1)} en (Canal)<br>
+Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
+Perú: ${calcularHoraSegunPais(hora, minutos, 0)} en (Canal)<br>
+Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
+<br>
+<br>
+<br>
+Argentina: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
+Bolivia: ${calcularHoraSegunPais(hora, minutos, 1)} on (Channel)<br>
+Brazil: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
+Chile: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
+Colombia: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
+Ecuador: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
+USA (ET): ${calcularHoraSegunPais(hora, minutos, 1)} on (Channel)<br>
+Spain: ${calcularHoraSegunPais(hora, minutos, 6)} on (Channel)<br>
+England: ${calcularHoraSegunPais(hora, minutos, 5)} on (Channel)<br>
+Mexico: ${calcularHoraSegunPais(hora, minutos, -1)} on (Channel)<br>
+Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
+Peru: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
+Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>`);
 
         mensaje.innerHTML = "\u2714";
         mensaje.classList.add("fade-in");
