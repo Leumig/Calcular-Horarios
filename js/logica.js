@@ -50,26 +50,29 @@ boton.addEventListener("click", () => {
             México: ${calcularHoraSegunPais(hora, minutos, -1)} en (Canal)<br>
             Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
             Perú: ${calcularHoraSegunPais(hora, minutos, 0)} en (Canal)<br>
-            Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
-            <br>
-            <br>
-            <br>
-            Argentina: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
-            Bolivia: ${calcularHoraSegunPais(hora, minutos, 1)} on (Channel)<br>
-            Brazil: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
-            Chile: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
-            Colombia: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
-            Ecuador: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
-            USA (ET): ${calcularHoraSegunPais(hora, minutos, 1)} on (Channel)<br>
-            Spain: ${calcularHoraSegunPais(hora, minutos, 6)} on (Channel)<br>
-            England: ${calcularHoraSegunPais(hora, minutos, 5)} on (Channel)<br>
-            Mexico: ${calcularHoraSegunPais(hora, minutos, -1)} on (Channel)<br>
-            Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
-            Peru: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
-            Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>`;
+            Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>`;
         textoCalculado = true;
      }
 });
+
+/*
+<br>
+<br>
+<br>
+Argentina: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
+Bolivia: ${calcularHoraSegunPais(hora, minutos, 1)} on (Channel)<br>
+Brazil: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
+Chile: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
+Colombia: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
+Ecuador: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
+USA (ET): ${calcularHoraSegunPais(hora, minutos, 1)} on (Channel)<br>
+Spain: ${calcularHoraSegunPais(hora, minutos, 6)} on (Channel)<br>
+England: ${calcularHoraSegunPais(hora, minutos, 5)} on (Channel)<br>
+Mexico: ${calcularHoraSegunPais(hora, minutos, -1)} on (Channel)<br>
+Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
+Peru: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
+Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
+*/
 
 const mensaje = document.querySelector("#mensaje");
 
@@ -109,23 +112,7 @@ Inglaterra: ${calcularHoraSegunPais(hora, minutos, 5)} en (Canal)<br>
 México: ${calcularHoraSegunPais(hora, minutos, -1)} en (Canal)<br>
 Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
 Perú: ${calcularHoraSegunPais(hora, minutos, 0)} en (Canal)<br>
-Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>
-<br>
-<br>
-<br>
-Argentina: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
-Bolivia: ${calcularHoraSegunPais(hora, minutos, 1)} on (Channel)<br>
-Brazil: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
-Chile: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
-Colombia: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
-Ecuador: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
-USA (ET): ${calcularHoraSegunPais(hora, minutos, 1)} on (Channel)<br>
-Spain: ${calcularHoraSegunPais(hora, minutos, 6)} on (Channel)<br>
-England: ${calcularHoraSegunPais(hora, minutos, 5)} on (Channel)<br>
-Mexico: ${calcularHoraSegunPais(hora, minutos, -1)} on (Channel)<br>
-Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>
-Peru: ${calcularHoraSegunPais(hora, minutos, 0)} on (Channel)<br>
-Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)} on (Channel)<br>`);
+Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)<br>`);
 
         mensaje.innerHTML = "\u2714";
         mensaje.classList.add("fade-in");
