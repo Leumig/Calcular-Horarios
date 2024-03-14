@@ -5,16 +5,27 @@ const botonCopiar = document.getElementById("botonCopiar");
 texto.innerHTML = "&#x2764 Hola Gibeeeee, te amo mucho &#x2764";
 let textoCalculado = false;
 
+/*function calcularHoraSegunPais(hora, minutos, diferenciaHoraria) {
+    const fecha = new Date();
+    fecha.setHours(parseInt(hora));
+    fecha.setMinutes(parseInt(minutos));
+    fecha.setHours(fecha.getHours() + diferenciaHoraria);
+
+    const nuevaHora = fecha.getHours().toString().padStart(2, "0");
+    const nuevosMinutos = fecha.getMinutes().toString().padStart(2, "0");
+
+    return `${nuevaHora}:${nuevosMinutos} PM en (Canal)`;
+}*/
+
 function calcularHoraSegunPais(hora, minutos, diferenciaHoraria) {
     const fecha = new Date();
-     fecha.setHours(parseInt(hora));
-     fecha.setMinutes(parseInt(minutos));
-     fecha.setHours(fecha.getHours() + diferenciaHoraria);
+    fecha.setHours(parseInt(hora));
+    fecha.setMinutes(parseInt(minutos));
+    fecha.setHours(fecha.getHours() + diferenciaHoraria);
 
-     const nuevaHora = fecha.getHours().toString().padStart(2, "0");
-     const nuevosMinutos = fecha.getMinutes().toString().padStart(2, "0");
+    let horaFormato12h = fecha.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 
-     return `${nuevaHora}:${nuevosMinutos} hrs.`;
+    return `${horaFormato12h} en (Canal)`;
 }
 
 boton.addEventListener("click", () => {
@@ -31,14 +42,14 @@ boton.addEventListener("click", () => {
             Bolivia: ${calcularHoraSegunPais(hora, minutos, 1)}<br>
             Brasil: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
             Chile: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
-            Colombia: ${horaRecibida} hrs.<br>
-            Ecuador: ${horaRecibida} hrs.<br>
-            Estados Unidos: ${calcularHoraSegunPais(hora, minutos, 1)}<br>
+            Colombia: ${calcularHoraSegunPais(hora, minutos, 0)}<br>
+            Ecuador: ${calcularHoraSegunPais(hora, minutos, 0)}<br>
+            Estados Unidos (ET): ${calcularHoraSegunPais(hora, minutos, 1)}<br>
             España: ${calcularHoraSegunPais(hora, minutos, 6)}<br>
             Inglaterra: ${calcularHoraSegunPais(hora, minutos, 5)}<br>
             México: ${calcularHoraSegunPais(hora, minutos, -1)}<br>
             Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
-            Perú: ${horaRecibida} hrs.<br>
+            Perú: ${calcularHoraSegunPais(hora, minutos, 0)}<br>
             Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)}<br>`;
 
         textoCalculado = true;
@@ -71,19 +82,19 @@ botonCopiar.addEventListener("click", function () {
         const [hora, minutos] = horaRecibida.split(":");
 
         navigator.clipboard.writeText(`
-Argentina: ${calcularHoraSegunPais(hora, minutos, 2)}
-Bolivia: ${calcularHoraSegunPais(hora, minutos, 1)}
-Brasil: ${calcularHoraSegunPais(hora, minutos, 2)}
-Chile: ${calcularHoraSegunPais(hora, minutos, 2)}
-Colombia: ${horaRecibida} hrs.
-Ecuador: ${horaRecibida} hrs.
-Estados Unidos: ${calcularHoraSegunPais(hora, minutos, 1)}<br>
-España: ${calcularHoraSegunPais(hora, minutos, 6)}
-Inglaterra: ${calcularHoraSegunPais(hora, minutos, 5)}
-México: ${calcularHoraSegunPais(hora, minutos, -1)}
-Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)}
-Perú: ${horaRecibida} hrs.
-Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)}`);
+Argentina: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
+Bolivia: ${calcularHoraSegunPais(hora, minutos, 1)}<br>
+Brasil: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
+Chile: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
+Colombia: ${calcularHoraSegunPais(hora, minutos, 0)}<br>
+Ecuador: ${calcularHoraSegunPais(hora, minutos, 0)}<br>
+Estados Unidos (ET): ${calcularHoraSegunPais(hora, minutos, 1)}<br>
+España: ${calcularHoraSegunPais(hora, minutos, 6)}<br>
+Inglaterra: ${calcularHoraSegunPais(hora, minutos, 5)}<br>
+México: ${calcularHoraSegunPais(hora, minutos, -1)}<br>
+Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)}<br>
+Perú: ${calcularHoraSegunPais(hora, minutos, 0)}<br>
+Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)}<br>`);
 
         mensaje.innerHTML = "\u2714";
         mensaje.classList.add("fade-in");
