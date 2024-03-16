@@ -4,10 +4,10 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 h1 {
-    text-align: center;
-    margin: 0 100px 5px 100px;
-    font-size: 38px;
-    user-select: none;
+  text-align: center;
+  margin: 0 100px 5px 100px;
+  font-size: 38px;
+  user-select: none;
 }
 .contenedor-flex {
   display: flex;
@@ -52,8 +52,8 @@ input {
   transition-duration: 300ms;
 }
 input:hover {
-    cursor: pointer;
-    transform: scale(1.08);
+  cursor: pointer;
+  transform: scale(1.08);
 }
 
 p {
@@ -65,7 +65,7 @@ p {
   margin-top: 20px;
   margin-left: 0px;
 }
-#texto {
+.texto {
   color: rgb(214, 159, 202);
   border: solid 2px rgb(66, 9, 54);
   background-color: rgb(66, 9, 54);
@@ -76,6 +76,8 @@ p {
   font-size: 18px;
   text-align: center;
   margin: auto;
+  margin-top: 30px;
+  transition-duration: 300ms;
 }
 
 .contenedor-linea {
@@ -134,4 +136,32 @@ i.fa:hover {
 .fade-in {
   opacity: 0;
   animation: fadeIn 0.15s ease-in 1 forwards;
+}
+
+.contenedor-cuadros {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#textoEsp:hover, #textoIng:hover {
+  cursor: pointer;
+  transform: scale(1.08);
+}
+
+input {
+  margin-bottom: 7px;
+  font-size: 35px;
+  font-weight: bold;
+  color: rgb(66, 9, 54);
+  background-color: rgb(214, 159, 202);
+  border: solid 4px rgb(66, 9, 54);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  transition-duration: 300ms;
+}
+input:hover {
+  cursor: pointer;
+  transform: scale(1.08);
 }
