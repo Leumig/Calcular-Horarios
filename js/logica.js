@@ -3,7 +3,7 @@ const botonIng = document.getElementById("calcularIng");
 const textoEsp = document.getElementById("textoEsp");
 const botonCopiar = document.getElementById("botonCopiar");
 
-textoIng.setAttribute("hidden", "true");
+// textoIng.setAttribute("hidden", "true");
 
 textoEsp.innerHTML = "&#x2764 Hola Gibeeeee, te amo mucho. Para generar en Español, tiene que estar sólo la hora. Y para el Inglés, hora y fecha. &#x2764";
 let textoEspCalculado = false;
