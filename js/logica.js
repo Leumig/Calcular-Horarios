@@ -73,10 +73,10 @@ botonIng.addEventListener("click", () => {
   const fechaRecibida = document.getElementById("fecha").value;
   const [año, mes, dia] = fechaRecibida.split("-");
 
-  const fecha = new Date(año, mes - 1, dia); // Se resta 1 a mes porque los meses en JavaScript van de 0 a 11
+  const fecha = new Date(año, mes - 1, dia);
 
   const diasSemana = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const diaSemana = diasSemana[fecha.getDay()]; // Ahora llamamos a getDay() en el objeto Date 'fecha'
+  const diaSemana = diasSemana[fecha.getDay()];
 
   console.log(fechaRecibida);
 
@@ -87,7 +87,7 @@ botonIng.addEventListener("click", () => {
   } else {
     copiarTablaIngles(mes, dia, diaSemana, año, hora, minutos);
     textoEsp.innerHTML =
-    "&#x2764 Texto en Inglés copiado correctamente &#x2764";
+    "&#x2764 Tabla en Inglés copiada correctamente &#x2764";
     textoIngCalculado = true;
   }
 });
@@ -199,6 +199,14 @@ function escribirTD(pais, mesRecibido, dia, diaSemana, añoRecibido, horaColombi
   if (hora >= 24) {
     hora -= 24;
     dia++;
+    if (dia > cantidadDiasMes(mesRecibido, añoRecibido)) {
+      dia = 1;
+      mesRecibido++;
+      if (mesRecibido > 12) {
+        mesRecibido = 1;
+        año++;
+      }
+    }
   }
 
   return `
@@ -207,6 +215,9 @@ function escribirTD(pais, mesRecibido, dia, diaSemana, añoRecibido, horaColombi
 <td style="text-align: center;">${hora}:${minutos} ${tipo}</td>`
 }
 
+function cantidadDiasMes(mes, año) {
+  return new Date(año, mes, 0).getDate();
+}
 
 function escribirMesResumido(mesRecibido)
 {
@@ -237,10 +248,6 @@ function escribirMesResumido(mesRecibido)
       return 'Dic';
   }
 }
-
-
-
-
 
 // botonCopiar.addEventListener("click", function () {
 //     const textoEspGenerado = document.getElementById("textoEsp");
