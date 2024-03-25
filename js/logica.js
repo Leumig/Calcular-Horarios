@@ -111,7 +111,7 @@ function copiarTablaIngles(mes, dia, diaSemana, año, hora, minutos)
       <td style="text-align: center;">Telemundo, Telemundo Deportes En Vivo, Foxsports.com, FOX Network, UFORIA App, Futbol de Primera Radio, FOX Sports App, Sling, SiriusXM FC, Peacock</td>
     </tr>
     <tr>
-      ${escribirTD('Argelia', mes, dia, diaSemana, año, hora, minutos, -6, '')}
+      ${escribirTD('Argelia', mes, dia, diaSemana, año, hora, minutos, 6, '')}
       <td style="text-align: center;">beIN Sports MAX 4 Arabia, beIN Sports MAX 2 Arabia, beIN Sports MAX 3 Arabia, beIN Sports MAX 1 Arabia, TOD, beIN SPORTS CONNECT</td>
     </tr>
     <tr>
@@ -196,9 +196,20 @@ function escribirTD(pais, mesRecibido, dia, diaSemana, añoRecibido, horaColombi
   let mes = escribirMesResumido(mesRecibido);
   let año = añoRecibido - 2000;
 
+  // Verificar si la hora supera las 24 horas
   if (hora >= 24) {
     hora -= 24;
     dia++;
+    // Obtener el nuevo nombre del día
+
+    const fecha = new Date(añoRecibido, mesRecibido - 1, dia);
+    const diasSemana = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    diaSemana = diasSemana[fecha.getDay()];
+
+    // const fecha = new Date(`${año}-${mesRecibido}-${dia}`);
+    // diaSemana = obtenerNombreDiaSemana(nuevaFecha.getDay());
+
+    // Verificar si el cambio de día implica un cambio de mes o año
     if (dia > cantidadDiasMes(mesRecibido, añoRecibido)) {
       dia = 1;
       mesRecibido++;
@@ -209,6 +220,7 @@ function escribirTD(pais, mesRecibido, dia, diaSemana, añoRecibido, horaColombi
     }
   }
 
+
   return `
 <td style="text-align: center;">${pais}</td>
 <td style="text-align: center;">${diaSemana}, ${dia} ${mes} ${año}</td>
@@ -218,6 +230,11 @@ function escribirTD(pais, mesRecibido, dia, diaSemana, añoRecibido, horaColombi
 function cantidadDiasMes(mes, año) {
   return new Date(año, mes, 0).getDate();
 }
+
+// function obtenerNombreDiaSemana(dia) {
+//   const diasSemana = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+//   return diasSemana[dia];
+// }
 
 function escribirMesResumido(mesRecibido)
 {
