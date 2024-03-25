@@ -292,8 +292,7 @@ function copiarTablaIngles(mes, dia, diaSemana, año, hora, minutos)
 </table>`)
 }
 
-function escribirTD(pais, mesRecibido, dia, diaSemana, añoRecibido, horaColombia, minutos, diferencia, tipo)
-{
+function escribirTD(pais, mesRecibido, dia, diaSemana, añoRecibido, horaColombia, minutos, diferencia, tipo) {
   let hora = parseInt(horaColombia) + diferencia;
   let mes = escribirMesResumido(mesRecibido);
   let año = añoRecibido - 2000;
@@ -302,56 +301,63 @@ function escribirTD(pais, mesRecibido, dia, diaSemana, añoRecibido, horaColombi
     hora -= 24;
     dia++;
 
-    const fecha = new Date(añoRecibido, mesRecibido - 1, dia);
-    const diasSemana = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    diaSemana = diasSemana[fecha.getDay()];
-
     if (dia > cantidadDiasMes(mesRecibido, añoRecibido)) {
       dia = 1;
       mesRecibido++;
+
       if (mesRecibido > 12) {
         mesRecibido = 1;
         año++;
       }
-    }
-  }
 
+      mes = escribirMesResumido(String(mesRecibido));
+    }
+
+    const fecha = new Date(añoRecibido, mesRecibido - 1, dia);
+    const diasSemana = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    diaSemana = diasSemana[fecha.getDay()];
+  }
 
   return `
 <td style="text-align: center;">${pais}</td>
 <td style="text-align: center;">${diaSemana}, ${dia} ${mes} ${año}</td>
-<td style="text-align: center;">${hora}:${minutos} ${tipo}</td>`
+<td style="text-align: center;">${hora}:${minutos} ${tipo}</td>`;
 }
+
 
 function cantidadDiasMes(mes, año) {
   return new Date(año, mes, 0).getDate();
 }
 
-// function obtenerNombreDiaSemana(dia) {
-//   const diasSemana = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-//   return diasSemana[dia];
-// }
-
 function escribirMesResumido(mesRecibido)
 {
   switch (mesRecibido) {
     case '01':
+    case '1':
       return 'Jan';
     case '02':
+    case '2':
       return 'Feb';
     case '03':
+    case '3':
       return 'Mar';
     case '04':
+    case '4':
       return 'Apr';
     case '05':
+    case '5':
       return 'May';
     case '06':
+    case '6':
       return 'Jun';
     case '07':
+    case '7':
       return 'Jul';
     case '08':
+    case '8':
       return 'Aug';
     case '09':
+    case '9':
       return 'Sep';
     case '10':
       return 'Oct';
