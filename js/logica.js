@@ -59,7 +59,7 @@ México: ${calcularHoraSegunPais(hora, minutos, -1)} en (Canal)
 Paraguay: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)
 Perú: ${calcularHoraSegunPais(hora, minutos, 0)} en (Canal)
 Uruguay: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)
-Venezuela: ${calcularHoraSegunPais(hora, minutos, 2)} en (Canal)`);
+Venezuela: ${calcularHoraSegunPais(hora, minutos, 1)} en (Canal)`);
       textoEsp.innerHTML =
       "&#x2764 Texto en Español copiado correctamente &#x2764";
   }
